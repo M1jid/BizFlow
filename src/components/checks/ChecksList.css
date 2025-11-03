@@ -1,0 +1,197 @@
+/* ======================
+   Container
+====================== */
+.checks-container {
+  overflow-x: auto;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 16px;
+  direction: rtl;
+  font-family: Vazirmatn, sans-serif;
+  transition: all 0.3s ease-in-out;
+}
+
+/* ======================
+   Filters
+====================== */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 16px;
+  justify-content: flex-start;
+}
+
+.filters .input {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.filters .input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+/* ======================
+   Table
+====================== */
+.checks-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 8px;
+  font-size: 14px;
+}
+
+/* Header */
+.checks-table th {
+  background-color: #f1f5f9;
+  color: #1f2937;
+  font-weight: 700;
+  padding: 12px 8px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-radius: 8px 8px 0 0;
+}
+
+/* Table rows */
+.checks-table td {
+  padding: 12px 8px;
+  text-align: center;
+  vertical-align: middle;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.3s ease;
+}
+
+.checks-table tr:hover td {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+/* ======================
+   Row colors based on status & days
+====================== */
+/* ثبت شده */
+tr.registered td {
+  background-color: #d1fae5; /* سبز */
+}
+
+/* ثبت شده و کمتر از 7 روز مانده */
+tr.registered.days-soon td {
+  background-color: #fbcfe8; /* صورتی ملایم */
+}
+
+/* ثبت نشده */
+tr.unregistered td {
+  background-color: #fee2e2; /* قرمز روشن */
+}
+
+/* ثبت نشده و کمتر از 7 روز مانده */
+tr.unregistered.days-soon td {
+  background-color: #f87171; /* قرمز پررنگ */
+}
+
+/* ======================
+   Days cell
+====================== */
+.days-cell.expired {
+  color: #dc2626;
+  font-weight: 700;
+}
+
+.days-cell.warning {
+  color: #b45309;
+  font-weight: 600;
+}
+
+.days-cell.ok {
+  color: #047857;
+  font-weight: 500;
+}
+
+/* ======================
+   Actions (Buttons)
+====================== */
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 6px 14px;
+  border: none;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn.notify {
+  background: linear-gradient(90deg, #3b82f6, #2563eb);
+  color: white;
+}
+
+.btn.notify:hover {
+  background: linear-gradient(90deg, #1d4ed8, #1e40af);
+}
+
+.btn.delete {
+  background: linear-gradient(90deg, #f87171, #ef4444);
+  color: white;
+}
+
+.btn.delete:hover {
+  background: linear-gradient(90deg, #dc2626, #991b1b);
+}
+
+/* ======================
+   Responsive
+====================== */
+@media (max-width: 1024px) {
+  .checks-table {
+    font-size: 13px;
+  }
+
+  .btn, .filters .input {
+    font-size: 12px;
+    padding: 5px 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .checks-table {
+    font-size: 12px;
+  }
+
+  .btn, .filters .input {
+    font-size: 11px;
+    padding: 4px 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .checks-table th,
+  .checks-table td {
+    padding: 8px 6px;
+    font-size: 11px;
+  }
+
+  .btn, .filters .input {
+    padding: 3px 6px;
+    font-size: 10px;
+  }
+}

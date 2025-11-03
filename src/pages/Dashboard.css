@@ -1,0 +1,120 @@
+/* src/pages/Dashboard.css */
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-family: Vazirmatn, sans-serif;
+  direction: rtl;
+}
+
+.stats-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.stat-card {
+  flex: 1;
+  min-width: 150px;
+  padding: 20px;
+  border-radius: 12px;
+  color: white;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+  transition: transform 0.2s;
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+}
+
+.stat-card.checks {
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
+}
+
+.stat-card.sales {
+  background: linear-gradient(135deg, #16a34a, #22c55e);
+}
+
+.stat-header {
+  font-size: 16px;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.stat-value {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.panels-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.panel-card {
+  flex: 1;
+  min-width: 300px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.lists-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.list-card {
+  flex: 1;
+  min-width: 350px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  overflow-x: auto; /* مهم برای جدول‌های بزرگ */
+}
+
+.list-card h4 {
+  margin-bottom: 12px;
+}
+
+.list-card table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: auto; /* ستون‌ها اندازه محتوا را می‌گیرند */
+  min-width: 600px; /* جدول بزرگ‌تر */
+}
+
+.list-card th, .list-card td {
+  padding: 10px;
+  border-bottom: 1px solid #f1f5f9;
+  text-align: center;
+  white-space: nowrap; /* جلوگیری از شکستن عدد و متن */
+}
+
+.list-card th {
+  background: #f8fafc;
+  font-weight: 600;
+}
+
+.list-card td {
+  overflow-x: auto; /* متن طولانی قابل اسکرول باشد */
+}
+
+.list-card tr:hover {
+  background-color: #f9fafb;
+}
+
+@media (max-width: 1024px) {
+  .stats-row, .panels-row, .lists-row {
+    flex-direction: column;
+  }
+
+  .list-card table {
+    min-width: 100%; /* برای موبایل جدول پر شود */
+  }
+}

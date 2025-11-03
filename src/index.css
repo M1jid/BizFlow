@@ -1,0 +1,42 @@
+/* راست چین کل اپلیکیشن */
+body {
+  direction: rtl;
+  font-family: "Vazir", sans-serif; /* فونت فارسی زیبا */
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 0;
+}
+
+/* container اصلی */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+/* استایل header */
+header.card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background-color: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+/* دکمه‌ها */
+button.btn {
+  padding: 8px 16px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button.btn:hover {
+  background-color: #45a049;
+}
