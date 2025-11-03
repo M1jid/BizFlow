@@ -1,0 +1,41 @@
+name: Build Electron Mac
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build-mac:
+    runs-on: macos-latest
+
+    steps:
+      # 1. گرفتن کدها از GitHub
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # 2. نصب Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      # 3. نصب npm packages
+      - name: Install dependencies
+        run: npm install
+
+      # 4. ساخت build React
+      - name: Build React
+        run: npm run build
+
+      # 5. ساخت اپ Electron macOS
+      - name: Build Electron app for Mac
+        run: npm run dist
+
+      # 6. آپلود خروجی به GitHub Artifacts
+      - name: Upload mac build
+        uses: actions/upload-artifact@v4
+        with:
+          name: mac-build
+          path: release/
