@@ -29,9 +29,9 @@ jobs:
       - name: Build React
         run: npm run build
 
-      # 5. ساخت اپ Electron macOS
+      # 5. ساخت اپ Electron macOS بدون انتشار به GitHub
       - name: Build Electron app for Mac
-        run: npm run dist
+        run: npm run dist -- --publish never
 
       # 6. آپلود خروجی به GitHub Artifacts
       - name: Upload mac build
